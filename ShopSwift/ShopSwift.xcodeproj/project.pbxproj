@@ -7,25 +7,105 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44396E0C29CA036C001C96EE /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44396E0B29CA036C001C96EE /* AuthorizationService.swift */; };
+		443D090529CA477900420E37 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D090429CA477900420E37 /* CustomTabBarView.swift */; };
+		443D090729CA47B200420E37 /* CustomTabBarViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D090629CA47B200420E37 /* CustomTabBarViewRouter.swift */; };
+		444EC78129C4B59D0063DBD7 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444EC78029C4B59D0063DBD7 /* CustomSearchBar.swift */; };
+		444EC78329C4B63F0063DBD7 /* DropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444EC78229C4B63F0063DBD7 /* DropDownList.swift */; };
+		444EFBC129C233DF00604BAE /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444EFBC029C233DF00604BAE /* DetailsView.swift */; };
+		444EFBC529C25D7400604BAE /* NetworkDataBlockOperationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444EFBC429C25D7400604BAE /* NetworkDataBlockOperationLoader.swift */; };
+		4462A5A529C614D200B9E99D /* LatestDelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462A5A429C614D200B9E99D /* LatestDelayView.swift */; };
+		4462A5A729C6154600B9E99D /* FlashSaleDelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462A5A629C6154600B9E99D /* FlashSaleDelayView.swift */; };
+		44AE457C29CB67390009E753 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AE457B29CB67390009E753 /* MainRouter.swift */; };
 		44B162FB29BBA34B00470092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B162FA29BBA34B00470092 /* AppDelegate.swift */; };
 		44B162FD29BBA34B00470092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B162FC29BBA34B00470092 /* SceneDelegate.swift */; };
-		44B162FF29BBA34B00470092 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B162FE29BBA34B00470092 /* ViewController.swift */; };
 		44B1630429BBA34C00470092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44B1630329BBA34C00470092 /* Assets.xcassets */; };
 		44B1630729BBA34C00470092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B1630529BBA34C00470092 /* LaunchScreen.storyboard */; };
 		44B1631929BBA69A00470092 /* AGLDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 44B1631829BBA69A00470092 /* AGLDomain */; };
 		44B1632129BBA95C00470092 /* AGLUI in Frameworks */ = {isa = PBXBuildFile; productRef = 44B1632029BBA95C00470092 /* AGLUI */; };
+		44B3A42829BFBA7F008DB4B6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3A42729BFBA7F008DB4B6 /* MainView.swift */; };
+		44B3A44529C074D5008DB4B6 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43129C074D3008DB4B6 /* Montserrat-LightItalic.ttf */; };
+		44B3A44629C074D5008DB4B6 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43229C074D3008DB4B6 /* Montserrat-SemiBoldItalic.ttf */; };
+		44B3A44729C074D5008DB4B6 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43329C074D4008DB4B6 /* Montserrat-BoldItalic.ttf */; };
+		44B3A44829C074D5008DB4B6 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43429C074D4008DB4B6 /* Montserrat-BlackItalic.ttf */; };
+		44B3A44929C074D5008DB4B6 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43529C074D4008DB4B6 /* Montserrat-Medium.ttf */; };
+		44B3A44A29C074D5008DB4B6 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43629C074D4008DB4B6 /* Montserrat-Regular.ttf */; };
+		44B3A44B29C074D5008DB4B6 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43729C074D4008DB4B6 /* Montserrat-SemiBold.ttf */; };
+		44B3A44C29C074D5008DB4B6 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43829C074D4008DB4B6 /* Montserrat-VariableFont_wght.ttf */; };
+		44B3A44D29C074D5008DB4B6 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43929C074D4008DB4B6 /* Montserrat-Light.ttf */; };
+		44B3A44E29C074D5008DB4B6 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43A29C074D4008DB4B6 /* Montserrat-Thin.ttf */; };
+		44B3A44F29C074D5008DB4B6 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43B29C074D4008DB4B6 /* Montserrat-Black.ttf */; };
+		44B3A45029C074D5008DB4B6 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43C29C074D4008DB4B6 /* Montserrat-ExtraLightItalic.ttf */; };
+		44B3A45129C074D5008DB4B6 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43D29C074D4008DB4B6 /* Montserrat-ThinItalic.ttf */; };
+		44B3A45229C074D5008DB4B6 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43E29C074D4008DB4B6 /* Montserrat-ExtraLight.ttf */; };
+		44B3A45329C074D5008DB4B6 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A43F29C074D4008DB4B6 /* Montserrat-Italic.ttf */; };
+		44B3A45429C074D5008DB4B6 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A44029C074D5008DB4B6 /* Montserrat-Bold.ttf */; };
+		44B3A45529C074D5008DB4B6 /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A44129C074D5008DB4B6 /* Montserrat-ExtraBoldItalic.ttf */; };
+		44B3A45629C074D5008DB4B6 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A44229C074D5008DB4B6 /* Montserrat-MediumItalic.ttf */; };
+		44B3A45729C074D5008DB4B6 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A44329C074D5008DB4B6 /* Montserrat-ExtraBold.ttf */; };
+		44B3A45829C074D5008DB4B6 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B3A44429C074D5008DB4B6 /* Montserrat-Italic-VariableFont_wght.ttf */; };
+		44B3A45A29C0E9DD008DB4B6 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3A45929C0E9DD008DB4B6 /* CustomNavigationBar.swift */; };
+		44B3A45C29C104E0008DB4B6 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3A45B29C104E0008DB4B6 /* CategoriesView.swift */; };
+		44B3A46129C10C51008DB4B6 /* LatestElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3A46029C10C51008DB4B6 /* LatestElementView.swift */; };
+		44E8A8C229C1A2FC00CCC521 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E8A8C129C1A2FC00CCC521 /* ProfileView.swift */; };
+		44E8A8C529C1D1B100CCC521 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E8A8C429C1D1B100CCC521 /* ImagePicker.swift */; };
+		44E8A8CB29C1DD3F00CCC521 /* FlashSaleElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E8A8CA29C1DD3F00CCC521 /* FlashSaleElementView.swift */; };
+		44EA358F29BFAC0900EEA59D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EA358E29BFAC0900EEA59D /* LoginView.swift */; };
+		44FBF82429BC563B003C615F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBF82329BC563B003C615F /* NetworkService.swift */; };
+		44FBF82629BC57F1003C615F /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBF82529BC57F1003C615F /* NetworkDataFetcher.swift */; };
+		44FBF82829BC6912003C615F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBF82729BC6912003C615F /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44396E0B29CA036C001C96EE /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		443D090429CA477900420E37 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		443D090629CA47B200420E37 /* CustomTabBarViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewRouter.swift; sourceTree = "<group>"; };
+		444EC78029C4B59D0063DBD7 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		444EC78229C4B63F0063DBD7 /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
+		444EFBC029C233DF00604BAE /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		444EFBC429C25D7400604BAE /* NetworkDataBlockOperationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataBlockOperationLoader.swift; sourceTree = "<group>"; };
+		4462A5A429C614D200B9E99D /* LatestDelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestDelayView.swift; sourceTree = "<group>"; };
+		4462A5A629C6154600B9E99D /* FlashSaleDelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleDelayView.swift; sourceTree = "<group>"; };
+		44AE457B29CB67390009E753 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		44B162F729BBA34B00470092 /* ShopSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B162FA29BBA34B00470092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44B162FC29BBA34B00470092 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		44B162FE29BBA34B00470092 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		44B1630329BBA34C00470092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44B1630629BBA34C00470092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44B1630829BBA34C00470092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44B1631629BBA68400470092 /* AGLDomain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AGLDomain; path = Modules/AGLDomain; sourceTree = "<group>"; };
 		44B1631F29BBA94700470092 /* AGLUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AGLUI; path = Modules/AGLUI; sourceTree = "<group>"; };
+		44B3A42729BFBA7F008DB4B6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		44B3A43129C074D3008DB4B6 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		44B3A43229C074D3008DB4B6 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		44B3A43329C074D4008DB4B6 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		44B3A43429C074D4008DB4B6 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		44B3A43529C074D4008DB4B6 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		44B3A43629C074D4008DB4B6 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		44B3A43729C074D4008DB4B6 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		44B3A43829C074D4008DB4B6 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		44B3A43929C074D4008DB4B6 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		44B3A43A29C074D4008DB4B6 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		44B3A43B29C074D4008DB4B6 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		44B3A43C29C074D4008DB4B6 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		44B3A43D29C074D4008DB4B6 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		44B3A43E29C074D4008DB4B6 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		44B3A43F29C074D4008DB4B6 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		44B3A44029C074D5008DB4B6 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		44B3A44129C074D5008DB4B6 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		44B3A44229C074D5008DB4B6 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		44B3A44329C074D5008DB4B6 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		44B3A44429C074D5008DB4B6 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		44B3A45929C0E9DD008DB4B6 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		44B3A45B29C104E0008DB4B6 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		44B3A46029C10C51008DB4B6 /* LatestElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestElementView.swift; sourceTree = "<group>"; };
+		44E8A8C129C1A2FC00CCC521 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		44E8A8C429C1D1B100CCC521 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		44E8A8CA29C1DD3F00CCC521 /* FlashSaleElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleElementView.swift; sourceTree = "<group>"; };
+		44EA358E29BFAC0900EEA59D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		44FBF82329BC563B003C615F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		44FBF82529BC57F1003C615F /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		44FBF82729BC6912003C615F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +121,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44396E0A29CA0336001C96EE /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				44396E0B29CA036C001C96EE /* AuthorizationService.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		444EC77F29C4A91A0063DBD7 /* CategoriesView */ = {
+			isa = PBXGroup;
+			children = (
+				44B3A45B29C104E0008DB4B6 /* CategoriesView.swift */,
+			);
+			path = CategoriesView;
+			sourceTree = "<group>";
+		};
+		4462A5A329C614B700B9E99D /* DelayView */ = {
+			isa = PBXGroup;
+			children = (
+				4462A5A429C614D200B9E99D /* LatestDelayView.swift */,
+				4462A5A629C6154600B9E99D /* FlashSaleDelayView.swift */,
+			);
+			path = DelayView;
+			sourceTree = "<group>";
+		};
+		44AE457229CB3EC60009E753 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				44AE457B29CB67390009E753 /* MainRouter.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		44B162EE29BBA34B00470092 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +195,7 @@
 		44B1630F29BBA45500470092 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				44E8A8C029C1A2EB00CCC521 /* Profile */,
 				44B1631D29BBA74F00470092 /* Details */,
 				44B1631C29BBA74A00470092 /* Main */,
 				44B1631B29BBA73500470092 /* Login */,
@@ -108,6 +222,9 @@
 		44B1631A29BBA70C00470092 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				44AE457229CB3EC60009E753 /* Coordinator */,
+				44396E0A29CA0336001C96EE /* Authorization */,
+				44FBF82229BC562A003C615F /* Networking */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -115,7 +232,8 @@
 		44B1631B29BBA73500470092 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				44B162FE29BBA34B00470092 /* ViewController.swift */,
+				44FBF82729BC6912003C615F /* SignInView.swift */,
+				44EA358E29BFAC0900EEA59D /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -123,6 +241,11 @@
 		44B1631C29BBA74A00470092 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				444EC77F29C4A91A0063DBD7 /* CategoriesView */,
+				44B3A45F29C10C28008DB4B6 /* Cells */,
+				44B3A42D29BFC07F008DB4B6 /* CustomNavigationBar */,
+				44B3A42A29BFBDAE008DB4B6 /* CustomTabBar */,
+				44B3A42729BFBA7F008DB4B6 /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -130,6 +253,7 @@
 		44B1631D29BBA74F00470092 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				444EFBC029C233DF00604BAE /* DetailsView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -137,11 +261,95 @@
 		44B1631E29BBA76E00470092 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44B3A43029C074B4008DB4B6 /* MontserratFont */,
 				44B1630529BBA34C00470092 /* LaunchScreen.storyboard */,
 				44B1630829BBA34C00470092 /* Info.plist */,
 				44B1630329BBA34C00470092 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		44B3A42A29BFBDAE008DB4B6 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				443D090429CA477900420E37 /* CustomTabBarView.swift */,
+				443D090629CA47B200420E37 /* CustomTabBarViewRouter.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		44B3A42D29BFC07F008DB4B6 /* CustomNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				44B3A45929C0E9DD008DB4B6 /* CustomNavigationBar.swift */,
+				444EC78029C4B59D0063DBD7 /* CustomSearchBar.swift */,
+				444EC78229C4B63F0063DBD7 /* DropDownList.swift */,
+			);
+			path = CustomNavigationBar;
+			sourceTree = "<group>";
+		};
+		44B3A43029C074B4008DB4B6 /* MontserratFont */ = {
+			isa = PBXGroup;
+			children = (
+				44B3A43B29C074D4008DB4B6 /* Montserrat-Black.ttf */,
+				44B3A43429C074D4008DB4B6 /* Montserrat-BlackItalic.ttf */,
+				44B3A44029C074D5008DB4B6 /* Montserrat-Bold.ttf */,
+				44B3A43329C074D4008DB4B6 /* Montserrat-BoldItalic.ttf */,
+				44B3A44329C074D5008DB4B6 /* Montserrat-ExtraBold.ttf */,
+				44B3A44129C074D5008DB4B6 /* Montserrat-ExtraBoldItalic.ttf */,
+				44B3A43E29C074D4008DB4B6 /* Montserrat-ExtraLight.ttf */,
+				44B3A43C29C074D4008DB4B6 /* Montserrat-ExtraLightItalic.ttf */,
+				44B3A44429C074D5008DB4B6 /* Montserrat-Italic-VariableFont_wght.ttf */,
+				44B3A43F29C074D4008DB4B6 /* Montserrat-Italic.ttf */,
+				44B3A43929C074D4008DB4B6 /* Montserrat-Light.ttf */,
+				44B3A43129C074D3008DB4B6 /* Montserrat-LightItalic.ttf */,
+				44B3A43529C074D4008DB4B6 /* Montserrat-Medium.ttf */,
+				44B3A44229C074D5008DB4B6 /* Montserrat-MediumItalic.ttf */,
+				44B3A43629C074D4008DB4B6 /* Montserrat-Regular.ttf */,
+				44B3A43729C074D4008DB4B6 /* Montserrat-SemiBold.ttf */,
+				44B3A43229C074D3008DB4B6 /* Montserrat-SemiBoldItalic.ttf */,
+				44B3A43A29C074D4008DB4B6 /* Montserrat-Thin.ttf */,
+				44B3A43D29C074D4008DB4B6 /* Montserrat-ThinItalic.ttf */,
+				44B3A43829C074D4008DB4B6 /* Montserrat-VariableFont_wght.ttf */,
+			);
+			path = MontserratFont;
+			sourceTree = "<group>";
+		};
+		44B3A45F29C10C28008DB4B6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4462A5A329C614B700B9E99D /* DelayView */,
+				44B3A46029C10C51008DB4B6 /* LatestElementView.swift */,
+				44E8A8CA29C1DD3F00CCC521 /* FlashSaleElementView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		44E8A8C029C1A2EB00CCC521 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				44E8A8C329C1D19200CCC521 /* ChangeImageView */,
+				44E8A8C129C1A2FC00CCC521 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		44E8A8C329C1D19200CCC521 /* ChangeImageView */ = {
+			isa = PBXGroup;
+			children = (
+				44E8A8C429C1D1B100CCC521 /* ImagePicker.swift */,
+			);
+			path = ChangeImageView;
+			sourceTree = "<group>";
+		};
+		44FBF82229BC562A003C615F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				444EFBC429C25D7400604BAE /* NetworkDataBlockOperationLoader.swift */,
+				44FBF82329BC563B003C615F /* NetworkService.swift */,
+				44FBF82529BC57F1003C615F /* NetworkDataFetcher.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,8 +414,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B3A44A29C074D5008DB4B6 /* Montserrat-Regular.ttf in Resources */,
+				44B3A45529C074D5008DB4B6 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				44B3A45829C074D5008DB4B6 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */,
 				44B1630729BBA34C00470092 /* LaunchScreen.storyboard in Resources */,
 				44B1630429BBA34C00470092 /* Assets.xcassets in Resources */,
+				44B3A44629C074D5008DB4B6 /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				44B3A44F29C074D5008DB4B6 /* Montserrat-Black.ttf in Resources */,
+				44B3A45329C074D5008DB4B6 /* Montserrat-Italic.ttf in Resources */,
+				44B3A44C29C074D5008DB4B6 /* Montserrat-VariableFont_wght.ttf in Resources */,
+				44B3A44929C074D5008DB4B6 /* Montserrat-Medium.ttf in Resources */,
+				44B3A44D29C074D5008DB4B6 /* Montserrat-Light.ttf in Resources */,
+				44B3A45629C074D5008DB4B6 /* Montserrat-MediumItalic.ttf in Resources */,
+				44B3A44829C074D5008DB4B6 /* Montserrat-BlackItalic.ttf in Resources */,
+				44B3A44B29C074D5008DB4B6 /* Montserrat-SemiBold.ttf in Resources */,
+				44B3A44729C074D5008DB4B6 /* Montserrat-BoldItalic.ttf in Resources */,
+				44B3A44E29C074D5008DB4B6 /* Montserrat-Thin.ttf in Resources */,
+				44B3A44529C074D5008DB4B6 /* Montserrat-LightItalic.ttf in Resources */,
+				44B3A45429C074D5008DB4B6 /* Montserrat-Bold.ttf in Resources */,
+				44B3A45229C074D5008DB4B6 /* Montserrat-ExtraLight.ttf in Resources */,
+				44B3A45029C074D5008DB4B6 /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				44B3A45729C074D5008DB4B6 /* Montserrat-ExtraBold.ttf in Resources */,
+				44B3A45129C074D5008DB4B6 /* Montserrat-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,9 +446,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44B162FF29BBA34B00470092 /* ViewController.swift in Sources */,
+				4462A5A729C6154600B9E99D /* FlashSaleDelayView.swift in Sources */,
+				44396E0C29CA036C001C96EE /* AuthorizationService.swift in Sources */,
+				443D090729CA47B200420E37 /* CustomTabBarViewRouter.swift in Sources */,
+				44B3A42829BFBA7F008DB4B6 /* MainView.swift in Sources */,
+				44FBF82429BC563B003C615F /* NetworkService.swift in Sources */,
 				44B162FB29BBA34B00470092 /* AppDelegate.swift in Sources */,
+				44B3A45A29C0E9DD008DB4B6 /* CustomNavigationBar.swift in Sources */,
+				443D090529CA477900420E37 /* CustomTabBarView.swift in Sources */,
+				444EC78329C4B63F0063DBD7 /* DropDownList.swift in Sources */,
+				44E8A8C529C1D1B100CCC521 /* ImagePicker.swift in Sources */,
+				44B3A45C29C104E0008DB4B6 /* CategoriesView.swift in Sources */,
+				44E8A8C229C1A2FC00CCC521 /* ProfileView.swift in Sources */,
+				444EFBC529C25D7400604BAE /* NetworkDataBlockOperationLoader.swift in Sources */,
+				44FBF82629BC57F1003C615F /* NetworkDataFetcher.swift in Sources */,
+				444EC78129C4B59D0063DBD7 /* CustomSearchBar.swift in Sources */,
+				444EFBC129C233DF00604BAE /* DetailsView.swift in Sources */,
+				44E8A8CB29C1DD3F00CCC521 /* FlashSaleElementView.swift in Sources */,
+				44FBF82829BC6912003C615F /* SignInView.swift in Sources */,
+				4462A5A529C614D200B9E99D /* LatestDelayView.swift in Sources */,
+				44B3A46129C10C51008DB4B6 /* LatestElementView.swift in Sources */,
 				44B162FD29BBA34B00470092 /* SceneDelegate.swift in Sources */,
+				44EA358F29BFAC0900EEA59D /* LoginView.swift in Sources */,
+				44AE457C29CB67390009E753 /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

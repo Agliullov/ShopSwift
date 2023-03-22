@@ -13,7 +13,6 @@ let package = Package(
         .library(
             name: "AGLDomain",
             targets: ["AGLDomain"]),
-        
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
