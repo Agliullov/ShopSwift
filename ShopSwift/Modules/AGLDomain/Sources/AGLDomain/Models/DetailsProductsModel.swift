@@ -12,7 +12,7 @@ public struct DetailsProductsModel: Codable {
     public let description: String
     public let rating: Double
     public let numberOfReviews: Int
-    public let price: Int
+    public let price: Double
     public let colors: [String]
     public let imageURLs: [String]
     

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import AGLUI
 
 protocol Networking: AnyObject {
-    func request(urlString: String, _ completion: @escaping (Data?, Error?) -> Void)
+    func request(urlString: String) async -> Result<Data?, Error>
 }
 
 final class NetworkService {
@@ -22,26 +23,27 @@ final class NetworkService {
 
 private extension NetworkService {
     
-    func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) {
-        DispatchQueue(label: "AGLShopSwift.NetworkService", qos: queue, attributes: .concurrent).async {
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let data = data, error == nil {
-                    completion(data, nil)
-                } else if let error = error {
-                    completion(nil, error)
-                }
-            }.resume()
-        }
+    func createDataTask(from request: URLRequest) async throws -> Result<Data?, Error> {
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { return .failure(NSError.badRequest() as Error) }
+        
+        return .success(data)
     }
 }
 
 extension NetworkService: Networking {
     
-    func request(urlString: String, _ completion: @escaping (Data?, Error?) -> Void) {
-        guard let url = URL(string: urlString) else { return }
+    func request(urlString: String) async -> Result<Data?, Error> {
+        guard let url = URL(string: urlString) else { return .failure(NSError.emptyData() as Error)}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        self.createDataTask(from: request, completion: completion)
+        do {
+            let result = try await self.createDataTask(from: request)
+            return result
+        } catch (let error) {
+            return .failure(error)
+        }
     }
 }

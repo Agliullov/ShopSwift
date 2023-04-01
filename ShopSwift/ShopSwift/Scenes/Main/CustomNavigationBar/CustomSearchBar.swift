@@ -7,27 +7,21 @@
 
 import SwiftUI
 import AGLUI
-import AGLDomain
 import Combine
-
-final class SearchBarViewModel: ObservableObject {
-    @Published var text: String = ""
-}
 
 struct CustomSearchBar: View {
     
-    @StateObject private var viewModel = SearchBarViewModel()
+    @StateObject private var viewModel = MainViewModel()
     
     @State private var isEditing = false
     @State private var isShowSearch = false
-    @State private var array: [String]?
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 ZStack(alignment: .trailing) {
                     HStack(alignment: .center, spacing: 12.0) {
-                        TextField("What are you looking for ?", text: $viewModel.text)
+                        TextField("What are you looking for ?", text: $viewModel.searchBarText)
                             .font(.custom(Montserrat.light, size: 12.0))
                             .multilineTextAlignment(.center)
                             .padding(.vertical, 8.0)
@@ -39,7 +33,7 @@ struct CustomSearchBar: View {
                                     if isEditing {
                                         Button {
                                             withAnimation(.spring()) {
-                                                self.viewModel.text = ""
+                                                self.viewModel.searchBarText = ""
                                             }
                                         } label: {
                                             Image(systemName: "multiply.circle.fill")
@@ -78,10 +72,9 @@ struct CustomSearchBar: View {
                     .transition(.move(edge: .trailing))
                 }
             }
-            if isShowSearch, let array = array, viewModel.text != "" {
-                
+            if isShowSearch, let array = viewModel.search?.words, viewModel.searchBarText != "" {
                 ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(array.filter{ $0.localizedCaseInsensitiveContains(viewModel.text) }, id:\.self) { text in
+                    ForEach(array.filter{ $0.localizedCaseInsensitiveContains(viewModel.searchBarText) }, id:\.self) { text in
                         Button {
                             print("tap \(text)")
                         } label: {
@@ -96,19 +89,8 @@ struct CustomSearchBar: View {
                 .frame(maxWidth: .infinity, maxHeight: 135.0)
                 .background(Color(uiColor: .systemBackground))
             }
-            
         }.onAppear {
-            fetchSearch { searchModel in
-                self.array = searchModel?.words
-            }
+            viewModel.getSearchData()
         }
-    }
-}
-
-extension CustomSearchBar {
-    func fetchSearch(completion: @escaping (SearchProductsModel?) -> Void) {
-        let url = "https://run.mocky.io/v3/4c9cd822-9479-4509-803d-63197e5a9e19"
-        let network = NetworkDataFetcher()
-        network.getDataUrlFromJson(urlString: url, response: completion)
     }
 }

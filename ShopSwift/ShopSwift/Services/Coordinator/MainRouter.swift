@@ -13,7 +13,7 @@ public enum MainRouter: NavigationRouter {
     case signIn
     case logIn
     case main
-    case details(viewModel: DetailsProductsModel)
+    case details
     
     public var transition: NavigationTranisitionStyle {
         switch self {
@@ -36,8 +36,8 @@ public enum MainRouter: NavigationRouter {
             LoginView()
         case .main:
             MainView()
-        case .details(viewModel: let viewModel):
-            DetailsView(viewModel: viewModel)
+        case .details:
+            DetailsView()
         }
     }
 }

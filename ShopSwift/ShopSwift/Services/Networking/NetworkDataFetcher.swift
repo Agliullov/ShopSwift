@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkDataFetcherDelegate {
-    func getDataUrlFromJson<T: Codable>(urlString: String, response: @escaping (T?) -> Void)
+    func getDataUrlFromJson<T>(urlString: String) async -> T? where T : Codable
 }
 
 final class NetworkDataFetcher {
@@ -38,15 +38,19 @@ private extension NetworkDataFetcher {
 
 extension NetworkDataFetcher: NetworkDataFetcherDelegate {
     
-    func getDataUrlFromJson<T>(urlString: String, response: @escaping (T?) -> Void) where T : Codable {
-        networking.request(urlString: urlString) { data, error in
-            if let data = data {
-                let decoded = self.decodeJSONData(type: T.self, from: data)
-                response(decoded)
-            } else if let error = error {
-                print("Error received requesting data: \(error.localizedDescription)")
-                response(nil)
+    func getDataUrlFromJson<T>(urlString: String) async -> T? where T : Codable {
+        
+        let result = await networking.request(urlString: urlString)
+        
+        switch result {
+        case .success(let data):
+            if let decoded = self.decodeJSONData(type: T.self, from: data) {
+                return decoded
             }
+            return nil
+        case .failure(let error):
+            print("Error received requesting data: \(error.localizedDescription)")
+            return nil
         }
     }
 }

@@ -12,6 +12,8 @@ open class Coordinator<Router: NavigationRouter>: ObservableObject {
     public let navigationController: UINavigationController
     public let startingRoute: Router?
     
+    public var currentViewController: UIViewController?
+    
     public init(navigationController: UINavigationController = .init(), startingRoute: Router? = nil) {
         self.navigationController = navigationController
         self.startingRoute = startingRoute
@@ -29,14 +31,18 @@ open class Coordinator<Router: NavigationRouter>: ObservableObject {
         switch route.transition {
         case .push:
             navigationController.pushViewController(viewController, animated: animated)
+            self.currentViewController = viewController
         case .presentModally:
             viewController.modalPresentationStyle = .formSheet
             navigationController.present(viewController, animated: animated)
+            self.currentViewController = viewController
         case .presentFullscreen:
             viewController.modalPresentationStyle = .fullScreen
             navigationController.present(viewController, animated: animated)
+            self.currentViewController = viewController
         case .setInitial:
             navigationController.setViewControllers([viewController], animated: true)
+            self.currentViewController = viewController
         }
     }
     
