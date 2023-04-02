@@ -13,17 +13,19 @@ final class DetailsViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var currentImageIndex: Int = 0
     @Published var scaleSumCart: Int = 1
-
+    
     var details: DetailsProductsModel?
     
     private var networkManager: NetworkManager
     
     init() {
-        self.networkManager = NetworkManager()
+        self.networkManager = .init()
         getDetailsData()
     }
-    
-    private func getDetailsData() {
+}
+
+private extension DetailsViewModel {
+    func getDetailsData() {
         Task {
             self.details = await self.networkManager.getDetailsItems(MainViewModel.EndPoints.details.url)
             executeInMainQueue {
@@ -31,7 +33,9 @@ final class DetailsViewModel: ObservableObject {
             }
         }
     }
-    
+}
+
+extension DetailsViewModel {
     func updateIndex(index: Int) {
         self.currentImageIndex = index
     }

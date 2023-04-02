@@ -7,13 +7,10 @@
 
 import SwiftUI
 import AGLUI
-import AGLDomain
 
 struct FlashView: View {
     
-    @EnvironmentObject var coordinator: Coordinator<MainRouter>
-    
-    @StateObject private var viewModel = MainViewModel()
+    @EnvironmentObject private var viewModel: MainViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
@@ -34,10 +31,9 @@ struct FlashView: View {
                 if let flashModel = viewModel.flash {
                     HStack {
                         ForEach(Array(flashModel.flashSale.enumerated()), id: \.element) { _, model in
-                            FlashSaleElementView(viewModel: model)
-                                .onTapGesture {
-                                    coordinator.show(.details)
-                                }
+                            NavigationLink(destination: DetailsView()) {
+                                FlashSaleElementView(viewModel: model)
+                            }
                         }
                     }
                 } else {

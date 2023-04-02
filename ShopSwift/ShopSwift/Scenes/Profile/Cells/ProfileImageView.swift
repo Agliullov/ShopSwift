@@ -11,10 +11,7 @@ import PhotosUI
 
 struct ProfileImageView: View {
     
-    @ObservedObject var viewModel = ProfileViewModel()
-    
-    @State private var isShowPhotoLibrary = false
-    @State private var boolPerm = PHPhotoLibrary.authorizationStatus()
+    @EnvironmentObject var viewModel: ProfileViewModel
     
     var body: some View {
         VStack {
@@ -24,7 +21,6 @@ struct ProfileImageView: View {
                     .foregroundColor(Color(uiColor: .label))
                     .padding(.top, 20.0)
                     .padding(.bottom, 10.0)
-                
                 ZStack {
                     self.viewModel.selectedImage
                         .resizable()
@@ -34,44 +30,25 @@ struct ProfileImageView: View {
                         ProgressView()
                             .tint(Color.white)
                     }
-                    
                 }
-
+                
                 Button {
-                    self.isShowPhotoLibrary = true
                     viewModel.accessHandler?()
                 } label: {
                     Text("Change photo")
                         .font(.custom(Montserrat.regular, size: 10.0))
                         .foregroundColor(Color(uiColor: .secondaryLabel))
                         .alert(isPresented: $viewModel.isNeedShowAlert) {
-                            Alert(title: Text("Сук дай разрешение"), message: Text("Обэма ебаный"), primaryButton: .default(Text("На бля"), action: {
-                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
-                                                          options: [UIApplication.OpenExternalURLOptionsKey : Any](),
-                                                          completionHandler: nil)
-                                self.viewModel.isNeedShowAlert = false
-                            }), secondaryButton: .cancel(Text("Пшол ты")))
+                            Alert(
+                                title: Text("У приложения 'ShopSwift' нет доступа к Фото"),
+                                message: Text("Разрешить доступ можно в Настройках"),
+                                primaryButton: .default(Text("Открыть Настройки"), action: {
+                                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [UIApplication.OpenExternalURLOptionsKey : Any](), completionHandler: nil)
+                                    self.viewModel.isNeedShowAlert = false }),
+                                secondaryButton: .cancel(Text("Закрыть")))
                         }
                 }
             }
-//            .sheet(isPresented: $isShowPhotoLibrary) {
-//                if boolPerm == PHAuthorizationStatus.authorized {
-//                    ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-//                }
-//            }
-        }
-    }
-}
-
-extension ProfileImageView {
-    func checkForPermissions() {
-        switch PHPhotoLibrary.authorizationStatus(for: .readWrite) {
-        case .authorized:
-            break
-        case .notDetermined:
-            break
-        default:
-            break
         }
     }
 }

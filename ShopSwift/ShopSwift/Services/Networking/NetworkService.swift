@@ -25,9 +25,7 @@ private extension NetworkService {
     
     func createDataTask(from request: URLRequest) async throws -> Result<Data?, Error> {
         let (data, response) = try await URLSession.shared.data(for: request)
-        
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { return .failure(NSError.badRequest() as Error) }
-        
         return .success(data)
     }
 }

@@ -10,6 +10,9 @@ import AGLUI
 
 struct CustomNavigationBarView: View {
     
+    @EnvironmentObject private var mainViewModel: MainViewModel
+    @EnvironmentObject private var profileViewModel: ProfileViewModel
+    
     var body: some View {
         VStack {
             HStack(alignment: .top) {
@@ -30,15 +33,14 @@ struct CustomNavigationBarView: View {
                      +
                      Text("bata")
                         .font(.custom(Montserrat.bold, size: 20.0))
-                        .foregroundColor(Color(uiColor: .systemIndigo))
-                    )
+                        .foregroundColor(Color(uiColor: .systemIndigo)))
                 }
                 .padding(.leading, 50.0)
                 
                 Spacer()
                 
                 VStack(alignment: .center, spacing: 10.0) {
-                    Image("profile_image")
+                    profileViewModel.selectedImage
                         .resizable()
                         .scaledToFit()
                         .frame(width: 40.0, height: 40.0, alignment: .center)
@@ -52,6 +54,7 @@ struct CustomNavigationBarView: View {
             .padding(.top)
             
             CustomSearchBar()
+                .environmentObject(mainViewModel)
         }
         .navigationBarHidden(true)
     }

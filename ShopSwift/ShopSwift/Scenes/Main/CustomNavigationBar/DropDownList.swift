@@ -10,7 +10,7 @@ import AGLUI
 
 struct DropDownList: View {
     
-    @State var expand = false
+    @State private var expand: Bool = false
     
     var body: some View {
         VStack {

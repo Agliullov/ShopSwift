@@ -10,6 +10,7 @@ import SwiftUI
 public struct PagingView<Content>: View where Content: View {
     
     @Binding var index: Int
+    
     let maxIndex: Int
     let content: () -> Content
     

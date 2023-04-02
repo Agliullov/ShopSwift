@@ -10,6 +10,10 @@ import AGLDomain
 
 final class MainViewModel: ObservableObject {
     
+    static var mainURL = "https://run.mocky.io/v3/"
+    
+    private var networkManager: NetworkManager
+    
     @Published var searchBarText: String = ""
     @Published var isLoading: Bool = false
     
@@ -17,27 +21,20 @@ final class MainViewModel: ObservableObject {
     var flash: FlashSaleProductsModel?
     var search: SearchProductsModel?
     
-    private var networkManager: NetworkManager
-    
-    static var mainURL = "https://run.mocky.io/v3/"
-    
-    enum EndPoints: String{
-        case latest = "cc0071a1-f06e-48fa-9e90-b1c2a61eaca7"
-        case flash = "a9ceeb6e-416d-4352-bde6-2203416576ac"
-        case details = "f7f99d04-4971-45d5-92e0-70333383c239"
-        case search = "4c9cd822-9479-4509-803d-63197e5a9e19"
-        
-        var url: String {
-            return MainViewModel.mainURL + self.rawValue
-        }
-    }
-    
     init() {
-        self.networkManager = NetworkManager()
+        self.networkManager = .init()
         getMainData()
     }
     
-    private func getMainData() {
+    func getSearchData() {
+        Task {
+            self.search = await self.networkManager.getSearchItems(EndPoints.search.url)
+        }
+    }
+}
+
+private extension MainViewModel {
+    func getMainData() {
         Task {
             self.latest = await self.networkManager.getLatestItems(EndPoints.latest.url)
             self.flash = await self.networkManager.getFlashSaleItems(EndPoints.flash.url)
@@ -47,10 +44,17 @@ final class MainViewModel: ObservableObject {
             }
         }
     }
-    
-    func getSearchData() {
-        Task {
-            self.search = await self.networkManager.getSearchItems(EndPoints.search.url)
+}
+
+extension MainViewModel {
+    enum EndPoints: String{
+        case latest = "cc0071a1-f06e-48fa-9e90-b1c2a61eaca7"
+        case flash = "a9ceeb6e-416d-4352-bde6-2203416576ac"
+        case details = "f7f99d04-4971-45d5-92e0-70333383c239"
+        case search = "4c9cd822-9479-4509-803d-63197e5a9e19"
+        
+        var url: String {
+            return MainViewModel.mainURL + self.rawValue
         }
     }
 }

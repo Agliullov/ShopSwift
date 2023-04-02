@@ -9,29 +9,35 @@ import SwiftUI
 
 struct MainView: View {
     
-    @StateObject private var viewModel = MainViewModel()
+    @EnvironmentObject private var mainViewModel: MainViewModel
+    @EnvironmentObject private var profileViewModel: ProfileViewModel
     
     var body: some View {
-        if viewModel.isLoading {
-            VStack {
-                //MARK: - Navigation bar
-                CustomNavigationBarView()
-                
-                //MARK: - Categories stack
-                CategoriesView()
-                Spacer()
-                
-                //MARK: - Latest & Flash sale & Brands items
-                ScrollView(.vertical, showsIndicators: false) {
-                    LatestView()
+        NavigationView {
+            if mainViewModel.isLoading {
+                VStack {
+                    //MARK: - Navigation bar
+                    CustomNavigationBarView()
+                        .environmentObject(mainViewModel)
+                        .environmentObject(profileViewModel)
+                    
+                    //MARK: - Categories stack
+                    CategoriesView()
                     Spacer()
-                    FlashView()
-                    Spacer()
-                    BrandView()
+                    
+                    //MARK: - Latest & Flash sale & Brands items
+                    ScrollView(.vertical, showsIndicators: false) {
+                        LatestView().environmentObject(mainViewModel)
+                        Spacer()
+                        FlashView().environmentObject(mainViewModel)
+                        Spacer()
+                        BrandView().environmentObject(mainViewModel)
+                    }
                 }
+            } else {
+                ProgressView()
             }
-        } else {
-            ProgressView()
         }
+        .navigationBarHidden(true)
     }
 }

@@ -11,7 +11,7 @@ import Combine
 
 struct CustomSearchBar: View {
     
-    @StateObject private var viewModel = MainViewModel()
+    @EnvironmentObject private var viewModel: MainViewModel
     
     @State private var isEditing = false
     @State private var isShowSearch = false

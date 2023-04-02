@@ -10,8 +10,8 @@ import AGLUI
 
 struct BrandView: View {
     
-    @StateObject private var viewModel = MainViewModel()
-
+    @EnvironmentObject private var viewModel: MainViewModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             HStack(alignment: .center, spacing: 12.0) {
@@ -31,7 +31,9 @@ struct BrandView: View {
                 if let latestModel = viewModel.latest {
                     HStack {
                         ForEach(Array(latestModel.latest.enumerated()), id: \.element) { _, model in
-                            LatestElementView(viewModel: model)
+                            NavigationLink(destination: DetailsView()) {
+                                LatestElementView(viewModel: model)
+                            }
                         }
                     }
                 } else {

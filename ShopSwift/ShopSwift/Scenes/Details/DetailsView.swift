@@ -14,22 +14,20 @@ struct DetailsView: View {
     @StateObject private var viewModel = DetailsViewModel()
     
     var body: some View {
-        if viewModel.isLoading {
-            VStack {
-                ScrollView(.vertical, showsIndicators: false) {
-                    // MARK: - Image carousel & Like-Share buttons
-                    DetailsImageCarouselView().environmentObject(self.viewModel)
-                    // MARK: - Name, price, description and rating
-                    DetailsTextView().environmentObject(self.viewModel)
-                }
+        VStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                // MARK: - Image carousel & Like-Share buttons
+                DetailsImageCarouselView().environmentObject(viewModel)
+                // MARK: - Name, price, description and rating
+                DetailsTextView().environmentObject(viewModel)
+                Spacer()
             }
+            .padding(.top, -30)
             
-            Spacer()
-            
-            DetailsBottomView().environmentObject(self.viewModel)
-        } else {
-            ProgressView()
+            // MARK: - Quantity & AddToCart buttons
+            DetailsBottomView().environmentObject(viewModel)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: DetailsNavigationBackButtonView())
     }
-    
 }

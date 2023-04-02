@@ -17,8 +17,8 @@ struct FlashSaleElementView: View {
         ZStack {
             AsyncImage(url: URL(string: viewModel.imageURL)) { image in
                 image.resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: 175.0, maxHeight: 220.0)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: 175.0, maxHeight: 220.0)
             } placeholder: {
                 ProgressView()
             }

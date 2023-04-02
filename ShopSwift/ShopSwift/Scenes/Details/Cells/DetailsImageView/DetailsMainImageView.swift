@@ -25,7 +25,7 @@ struct DetailsMainImageView: View {
                 }
             }
             .aspectRatio(4/3, contentMode: .fit)
-            .clipShape(RoundedRectangle(cornerRadius: 15))
+            .clipShape(RoundedRectangle(cornerRadius: 15.0))
             .padding()
         }
     }

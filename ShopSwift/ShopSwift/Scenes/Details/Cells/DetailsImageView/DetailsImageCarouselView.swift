@@ -13,8 +13,8 @@ struct DetailsImageCarouselView: View {
     
     var body: some View {
         ZStack {
-            DetailsMainImageView().environmentObject(self.viewModel)
-                .padding(.leading, -10)
+            DetailsMainImageView()
+                .environmentObject(self.viewModel)
             VStack {
                 Spacer()
                 HStack {
@@ -28,7 +28,6 @@ struct DetailsImageCarouselView: View {
         
         HStack(alignment: .center, spacing: 15.0) {
             if let viewModel = viewModel.details {
-                
                 ForEach(Array((viewModel.imageURLs.enumerated())), id: \.element) { index, url in
                     AsyncImage(url: URL(string: url)) { image in
                         image.resizable()

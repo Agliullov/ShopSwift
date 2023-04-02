@@ -10,23 +10,14 @@ import AGLUI
 
 struct CategoriesView: View {
     
-    private let categories: [Category] = [
-        Category(name: "Phones", imageName: "Category 1"),
-        Category(name: "Headphones", imageName: "Category 2"),
-        Category(name: "Games", imageName: "Category 3"),
-        Category(name: "Cars", imageName: "Category 4"),
-        Category(name: "Furniture", imageName: "Category 5"),
-        Category(name: "Kids", imageName: "Category 6")
-    ]
-    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 15.0) {
-                ForEach(categories, id: \.self) { category in
+                ForEach(Categories.allCases, id: \.self) { category in
                     VStack(alignment: .center, spacing: 15.0) {
-                        Image(category.imageName)
+                        Image(category.value.imageName)
                             .frame(width: 42.0, height: 38.0, alignment: .center)
-                        Text(category.name)
+                        Text(category.value.name)
                             .font(.custom(Montserrat.light, size: 12.0))
                     }
                 }
@@ -37,9 +28,36 @@ struct CategoriesView: View {
     }
 }
 
-extension CategoriesView {
+private extension CategoriesView {
+    
     struct Category: Hashable {
         let name: String
         let imageName: String
+    }
+    
+    enum Categories: CaseIterable {
+        case phones
+        case headphones
+        case games
+        case cars
+        case furniture
+        case kids
+        
+        var value: Category {
+            switch self {
+            case .phones:
+                return Category(name: "Phones", imageName: "Category 1")
+            case .headphones:
+                return Category(name: "Headphones", imageName: "Category 2")
+            case .games:
+                return Category(name: "Games", imageName: "Category 3")
+            case .cars:
+                return Category(name: "Cars", imageName: "Category 4")
+            case .furniture:
+                return Category(name: "Furniture", imageName: "Category 5")
+            case .kids:
+                return Category(name: "Kids", imageName: "Category 6")
+            }
+        }
     }
 }

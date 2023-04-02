@@ -39,7 +39,6 @@ private extension NetworkDataFetcher {
 extension NetworkDataFetcher: NetworkDataFetcherDelegate {
     
     func getDataUrlFromJson<T>(urlString: String) async -> T? where T : Codable {
-        
         let result = await networking.request(urlString: urlString)
         
         switch result {
